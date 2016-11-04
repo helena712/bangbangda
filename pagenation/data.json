@@ -1,0 +1,26 @@
+{
+    "info" : [
+        { "id": 1, "title":"Parrot Of Joy"},
+        { "id": 2, "title":"Pilot Of The Frontline"},
+        { "id": 3, "title":"Turtles Of Greatness"},
+        { "id": 4, "title":"Armies Without Courage"},
+        { "id": 5, "title":"Mice And Phantoms"},
+        { "id": 6, "title":"Turtles And Doctors"},
+        { "id": 7, "title":"Will Of The Lost Ones"},
+        { "id": 8, "title":"Misfortune Of The Solstice"},
+        { "id": 9, "title":"Enter The World"},
+        { "id": 10, "title":"Meeting At The Apocolypse"},
+        { "id": 11, "title":"Robot Of Reality"},
+        { "id": 12, "title":"Defender Of Nightmares"},
+        { "id": 13, "title":"Fish Of Tomorrow"},
+        { "id": 14, "title":"Humans Without Sin"},
+        { "id": 15, "title":"Boys And Boys"},
+        { "id": 16, "title":"Giants And Lords"},
+        { "id": 17, "title":"Faith Of Dawn"},
+        { "id": 18, "title":"Wand Without Desire"},
+        { "id": 19, "title":"Life In The Ashes"},
+        { "id": 20, "title":"Sailing Into The Universe"},
+        { "id": 21, "title":"Queen With Pride"},
+        { "id": 22, "title":"Slave Of The Frontline"}
+    ]
+}

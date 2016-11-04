@@ -1,0 +1,96 @@
+@mixin clearboth {content:""; display:block; clear:both;}
+@mixin header_icon_btn { width:40px; height:40px; display:inline-block; text-align:center; line-height:40px; }
+@mixin dropdown_menu {min-width:270px; font-size:13px; box-shadow:0 5px 12px 2px rgba(0,0,0,0.25); position:absolute; top:40px; right:0; z-index:1000; background:#fff;}
+
+#container-wrap { min-height: 100vh; min-width:290px; height: auto; position:relative; overflow:hidden; }
+
+#header {
+    position:absolute; width:100%; z-index:10; left:0; top:0; height:40px; background:#fff;
+    .header-navbar {
+        .haeder-logo { float:left; width:220px; background-color:#263238; height:40px; overflow:hidden;
+            .loge-txt { text-align:center; color:#fff; font-size:20px; line-height:40px;
+                span { margin-left: 10px; display:inline-block; }
+            }
+        }
+        .header-content {
+            margin-left:220px; height:40px;
+            &:after { @include clearboth}
+            .menu-tg-btn { float:left; border-right:1px solid #ecf0f5;
+                a { @include header_icon_btn; }
+            }
+            .mene-links { float:right;
+                &>ul {
+                    &:after { @include clearboth}
+                    .dropdown { float:left;
+                        &.notification { position:relative; border-right:1px solid #ecf0f5;
+                            .noti-btn { position:relative; @include header_icon_btn;
+                                .fa-bell-o { font-size:18px;}
+                                .alert-img { display:inline-block; position:absolute; top:8px; right:9px; width:8px; height:8px; border-radius:100%; background:#f94a2c;}
+                            }
+                            .dropdown-menu { @include dropdown_menu; display:none;
+                                .main-msg { padding: 10px 15px; border-bottom:1px solid #cacaca;}
+                                .msgs { padding: 10px 15px; }
+                            }
+                        }
+                        &.profile { position:relative;
+                            .mem-name { font-size:14px; text-align:center; line-height:40px; padding: 0 20px; display:block;}
+                            .dropdown-menu { @include dropdown_menu; display:none;
+                                .main-msg { padding: 10px 15px; border-bottom:1px solid #cacaca;}
+                                .msgs { padding: 10px 15px; }
+                                .btn { padding:15px; text-align:right;
+                                    button { cursor:pointer; padding:5px 10px; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#nav { position:absolute; width:220px; z-index:4; left:0; top:40px; background-color:#263238; height:100%; overflow:hidden;
+    .nav-wrap { padding-top:20px; width:220px;
+        .nav-profile { padding:15px 20px; color:#fff;
+            .name { font-size:16px; font-weight:bold;}
+            .email { line-height:20px;}
+        }
+    }
+    .nav-shortcut {
+        .open { padding: 10px 20px;
+            li {float:left; width:calc(100%/3); text-align:center; position:relative;
+                a {color:#fff; display:block;}
+            }
+        }
+        .close { border-bottom:1px solid #0f141b; padding-bottom:10px; overflow:hidden; transition: all .7s ease .1s;
+            li {
+                a { padding:10px 20px; display:inline-block; width:50px; text-align:center; border-left:2px solid #263238;
+                    &:hover { background:#1d1f21; color:#fff; border-left:2px solid #084b8e;}
+                }
+            }
+        }
+        .put-popover { position:absolute;
+            .popover {text-align:center; z-index: 90;
+                .arrow { display:inline-block; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #fff; width:0; height:0;}
+                .content { padding:10px 15px; background:#fff; margin-top:-5px; border-radius:3px;}
+            }
+        }
+    }
+    .nav-menu { margin-top:10px;
+        .list-haeder { padding:10px 20px;}
+        a { padding:10px 20px; display:block; border-left:2px solid #263238;
+            &:hover { background:#1d1f21; color:#fff; border-left:2px solid #084b8e;}
+            .fa-sellsy, .fa-skyatlas { margin-right:10px;}
+            .drop-arrow { i {float:right;} }
+        }
+        .dropdown {
+            .dropdown-menu { display:none; background:#1d1f21;}
+        }
+    }
+}
+
+#content {
+    padding: 40px 0 80px 220px;
+    .page-title { padding:20px;}
+    .page-content { padding:20px;}
+}

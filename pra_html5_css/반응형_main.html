@@ -1,0 +1,141 @@
+<!DOCTYPE html >
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title> 반응형 페이지 </title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+<div id="header">
+    <div class="top">
+        <h1><i class="fa fa-envira"></i>LOGO</h1>
+        <div class="nav">
+            <a href="javascript:;" class="menu_btn"><i class="fa fa-bars"></i></a>
+            <ul class="menu_list">
+                <li><a href="javascript:;">MENU1</a></li>
+                <li><a href="javascript:;">MENU2</a></li>
+                <li><a href="javascript:;">MENU3</a></li>
+                <li><a href="javascript:;">MENU4</a></li>
+                <li><a href="javascript:;">MENU5</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- header//-->
+
+<div id="container">
+    <div class="banner">
+        <div class="ban_txt">
+            <p>Banner text</p>
+        </div>
+    </div>
+    <div class="cont1">
+        <ul>
+            <li class="con1_01">
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <dl>
+                        <dt>Knowlege</dt>
+                        <dd>Facts, information, and skills acquired by a person through experience</dd>
+                    </dl>
+                </a>
+            </li>
+            <li class="con1_02">
+                <a href="javascript:;">
+                    <i class="fa fa-globe"></i>
+                    <dl>
+                        <dt>Globalization</dt>
+                        <dd>other organizations develop international influence</dd>
+                    </dl>
+                </a>
+            </li>
+            <li class="con1_03">
+                <a href="javascript:;">
+                    <i class="fa fa-hourglass-half"></i>
+                    <dl>
+                        <dt>History</dt>
+                        <dd>The study of past events, particularly in human affairs</dd>
+                    </dl>
+                </a>
+            </li>
+        </ul>
+    </div><!-- cont1//-->
+
+    <div class="cont_wrap">
+    <div class="cont2">
+        <h3>News</h3>
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <time datatime="2016-06-14">06/14</time>
+                    <span>
+                        Want to Raise Happy, Healthy, Successful Kids?
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <time datatime="2016-06-14">06/14</time>
+                    <span>
+                        Sleepaway Glamp: The 10 best destinations to camp in style Sleepaway Glamp: The 10 best destinations to camp in style
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <time datatime="2016-06-14">06/14</time>
+                    <span>
+                        Orlando shooting: Vigils held around world to honour victims
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <time datatime="2016-06-14">06/14</time>
+                    <span>
+                        How to help Orlando shooting victims How to help Orlando shooting victims How to help Orlando shooting victims
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <time datatime="2016-06-14">06/14</time>
+                    <span>
+                        How to help Orlando shooting victims
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div><!-- cont2//-->
+
+    <div class="cont3">
+        <p>You can check the latest news!</p>
+        <ul>
+            <li><a href="javascript:;" class="tw"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
+            <li><a href="javascript:;" class="fb"><i class="fa fa-facebook"></i><span>Facebook</span></a></li>
+            <li><a href="javascript:;" class="yt"><i class="fa fa-youtube-play"></i><span>Youtube</span></a></li>
+            <li><a href="javascript:;" class="gg"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+        </ul>
+    </div><!-- cont3//-->
+    </div>
+</div><!-- container//-->
+
+<div id="footer">
+    <p class="copyright">Copyright © Helena</p>
+</div><!-- footer//-->
+
+</div><!-- wrap//-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.menu_btn').on('click', function(e){
+            e.preventDefault();
+            $(".menu_list").stop().slideToggle(600);
+        });
+    });
+</script>
+</body>
+</html>

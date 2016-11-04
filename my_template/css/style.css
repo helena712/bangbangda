@@ -1,0 +1,6 @@
+/*  Reset CSS  */
+* { margin:0;  padding:0;}
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none; color:#555; display: block}
+img { border:0;}
+body { font:12px/1.4 arial; color:#555; } 

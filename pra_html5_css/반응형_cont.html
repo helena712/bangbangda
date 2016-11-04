@@ -1,0 +1,90 @@
+<!DOCTYPE html >
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title> 반응형 서브 페이지 </title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+<div id="header">
+    <div class="top">
+        <h1><i class="fa fa-envira"></i>LOGO</h1>
+        <div class="nav">
+            <a href="javascript:;" class="menu_btn"><i class="fa fa-bars"></i></a>
+            <ul class="menu_list">
+                <li><a href="javascript:;">MENU1</a></li>
+                <li><a href="javascript:;">MENU2</a></li>
+                <li><a href="javascript:;">MENU3</a></li>
+                <li><a href="javascript:;">MENU4</a></li>
+                <li><a href="javascript:;">MENU5</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!-- header//-->
+
+<div id="container">
+    <div class="sub_page">
+        <div class="aside">
+            <h4><i class="fa fa-envira"></i>MENU1</h4>
+            <ul>
+                <li><a href="javascript:;">sub_menu01</a></li>
+                <li><a href="javascript:;">sub_menu02</a></li>
+                <li><a href="javascript:;">sub_menu03</a></li>
+                <li><a href="javascript:;">sub_menu04</a></li>
+                <li><a href="javascript:;">sub_menu05</a></li>
+            </ul>
+        </div><!-- aside//-->
+
+        <div class="sub_cont">
+            <div class="bread">
+                <ol>
+                    <li>
+                        <a href="javascript:;">Main</a>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Menu1</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="menu1_cont">
+                <h3>Things To Avoid When Writing CSS</h3>
+                <img src="img/css-3-guide.jpg">
+                <div class="txt_area">
+                    <p>Disclaimer: You may disagree with some of the things I’ve written in the ensuing article. That is okay. I do not claim to represent you, your company or your ideology so there’s really no reason to get upset. Just go ahead and disagree. Apologies to the vast majority of you who understand the mechanics of discourse and dialectics, for whom this disclaimer does not apply.</p>
+                    <div>
+                        <h4><i class="fa fa-spinner" aria-hidden="true"></i>Multiple files</h4>
+                        <p>A lot of web development seems to be about splitting things up into manageable chunks or “components”. For each discrete bit of javascript functionality or each HTML partial I might make a dedicated file, then organize related files into folders named javascript and html or controllers and templates. Whatever you like. This way, you can easily dip into the file system and focus on just the file containing the code you want to edit at the time.</p>
+                    </div>
+                    <div>
+                        <h4><i class="fa fa-spinner" aria-hidden="true"></i>Nesting (with Sass)</h4>
+                        <p>I’m ambivalent about Sass. Some things about it really excite me, like the ability to write generatively, using loops and conditionals. Other features, like the ability to nest declarations infinitely, aren’t so hot.<br />
+                        I think a lot of people come to Sass to help them manage and maintain their CSS; to make it easier to read and write. The addition of Sass as a dependency and abstraction layer can’t help but make things more systemically complex, but there’s something to be said for the interfaces Sass provides, like parametric mixins. Employing them in projects for readability and brevity can be something of a boon.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- sub_cont//-->
+    </div><!-- sub_page//-->
+</div><!-- container//-->
+
+<div id="footer">
+    <p class="copyright">Copyright © Helena</p>
+</div><!-- footer//-->
+
+</div><!-- wrap//-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.menu_btn').on('click', function(e){
+            e.preventDefault();
+            $(".menu_list").stop().slideToggle(600);
+        });
+    });
+</script>
+</body>
+</html>

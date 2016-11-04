@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/nifty.min.css" rel="stylesheet">
+    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+    <link href="plugins/magic-check/css/magic-check.min.css" rel="stylesheet">
+    <link href="plugins/pace/pace.min.css" rel="stylesheet">
+
+    <script src="plugins/pace/pace.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/nifty.min.js"></script>
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+<body>
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+
+
+    <!--=================================================-->
+
+    <!--Demo script [ DEMONSTRATION ]-->
+    <script src="js/demo/nifty-demo.min.js"></script>
+
+<div class="col-sm-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Login</h3>
+        </div>
+
+        <!--Horizontal Form-->
+        <!--===================================================-->
+        <form class="form-horizontal">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="get-email">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" placeholder="Email" id="get-email" name="id" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="get-pw">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" placeholder="Password" id="get-pw" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <input id="demo-remember-me-2" class="magic-checkbox" type="checkbox" onkeyup="enterkey();">
+                        <label for="demo-remember-me-2">Remember me</label>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <button class="btn btn-success" type="submit" onclick="login();">Sign in</button>
+            </div>
+        </form>
+        <!--===================================================-->
+        <!--End Horizontal Form-->
+        <!-- <div class="" onLoad="viewCookie();"></div> -->
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function login(){
+        var userEmail = "helen@me.com";
+        var userPw = "111";
+        var getEmail = document.getElementById("get-email").value;
+        var getPw = document.getElementById("get-pw").value;
+
+        if ((userEmail==getEmail) && (userPw==getPw)) {
+            alert("Hello "+ getEmail);
+        }else if(userEmail!=getEmail){
+            alert("Please check your id");
+        }else if(userPw!=getPw){
+            alert("Please check your pw");
+        }else{
+            alert("Please check your id and pw");
+        }
+    }
+    function enterkey(){
+        if (window.event.keyCode == 13) {
+            login();
+        }
+    }
+
+
+    $(document).ready(function(){
+
+        // 저장된 쿠키값을 가져와서 ID 칸에 넣어준다. 없으면 공백으로 들어감.
+        var userInputId = getCookie("userInputId");
+
+        $("input[name='id']").val(userInputId);
+
+
+        if($("input[name='id']").val() != ""){ // 그 전에 ID를 저장해서 처음 페이지 로딩 시, 입력 칸에 저장된 ID가 표시된 상태라면,
+            $("#demo-remember-me-2").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
+        }
+
+        $("#demo-remember-me-2").change(function(){ // 체크박스에 변화가 있다면,
+            if($("#demo-remember-me-2").is(":checked")){ // ID 저장하기 체크했을 때,
+                var userInputId = $("input[name='id']").val();
+                setCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
+            }else{ // ID 저장하기 체크 해제 시,
+                deleteCookie("userInputId");
+            }
+        });
+
+        // ID 저장하기를 체크한 상태에서 ID를 입력하는 경우, 이럴 때도 쿠키 저장.
+        $("input[name='id']").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+            if($("#demo-remember-me-2").is(":checked")){ // ID 저장하기를 체크한 상태라면,
+                var userInputId = $("input[name='id']").val();
+                setCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
+            }
+        });
+    });
+
+    function setCookie(cookieName, value, exdays){
+
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+        document.cookie = cookieName + "=" + cookieValue;
+    }
+
+    function deleteCookie(cookieName){
+        var expireDate = new Date();
+        expireDate.setDate(expireDate.getDate() - 1);
+        document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+    }
+
+    function getCookie(cookieName) {
+        cookieName = cookieName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cookieName);
+        var cookieValue = '';
+        if(start != -1){
+            start += cookieName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1)end = cookieData.length;
+            cookieValue = cookieData.substring(start, end);
+        }
+        return unescape(cookieValue);
+    }
+
+</script>
+
+</body>
+</html>

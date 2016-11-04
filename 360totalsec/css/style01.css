@@ -1,0 +1,25 @@
+/*  Reset CSS  */
+* { margin:0;  padding:0; box-sizing: border-box;}
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none; color:#555; display: block}
+img { border:0;}
+body { font:12px/1.4 arial; color:#555; }
+
+
+/*common*/
+.container { margin: 15px auto; }
+header { background: url(../img/header-bg-bd027236.jpg) no-repeat center center; background-size: cover}
+header .navbar { position: fixed; min-height: 100px; transition: all .5s;}
+header .navbar .navbar-header {}
+
+
+@media (min-width: 1200px){
+    .container { width: 1170px}
+}
+@media (min-width: 992px){
+    .container { width: 970px}
+}
+@media (min-width: 768px){
+    .container { width: 750px}
+}
+

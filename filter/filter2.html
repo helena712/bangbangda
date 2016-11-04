@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>filter</title>
+    <script src="jquery-2.1.1.min.js"></script>
+    <style media="screen">
+        .active {color:green}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CrativeFolk</h1>
+</header>
+<div id="buttons"></div>
+<div id="search">
+    <input type="text" placeholder="filter by search" id="filter-search">
+</div>
+<div id="gallery">
+    <img src="" data-tags="Animators" alt="Rabbit" />
+    <img src="" data-tags="Photographers" alt="Sea" />
+    <img src="" data-tags="Photographers, Designers" alt="Deer" />
+    <img src="" data-tags="Designers, Animators" alt="Map" />
+    <img src="" data-tags="Photographers" alt="Trumpet" />
+    <img src="" data-tags="Designers" alt="Typographic" />
+    <img src="" data-tags="Photographers" alt="Bicycle" />
+    <img src="" data-tags="Designers" alt="Aqua" />
+    <img src="" data-tags="Animators" alt="Ghost" />
+</div>
+
+
+
+<span id="data">
+    <table border="1">
+        <tr>
+            <td>데이터02222</td>
+            <td>데이터00retg</td>
+        </tr>
+        <tr>
+            <td>데이터1</td>
+            <td>데이터2</td>
+        </tr>
+    </table>
+</span>
+
+<div id="testtt"></div>
+
+
+<script type="text/javascript">
+    $(function(){
+        var $imgs = $('#gallery img'); //이미지들
+        var $buttons = $('#buttons'); //버튼들
+        var tagged = {}; //태그 객체 생성
+
+        $imgs.each(function(){ //이미지들에 대해 지정함수 한번씩 실행
+            var img = this; // 각 요소 this를 img
+            var tags = $(this).data('tags'); //img의 data에 tags를 가져옴
+
+            if (tags) { //각 이미지에 tag가 있으면
+                tags.split(',').forEach(function(tagName){ //각 태그를 콤마로 다시 나누고 나눠진 것을 tagName으로 받음
+                    if (tagged[tagName]==null) { //만약 tagged라는 객체에 tagName의 값이 비어있으면
+                        tagged[tagName]=[]; //빈배열 만들기
+                    }
+                    tagged[tagName].push(img); // 빈배열에 this 태그에 해당하는 이미지 넣기 태그:이미지배열
+                });
+            }
+        });
+
+        //모두보기 버튼
+        $('<button/>',{ // 버튼을 생성
+            text: '모두 보기', //텍스트는 모두보기
+            class: 'active', //클래스는 active
+            click: function(){ //클릭했을 때
+                $(this).addClass('active').siblings().removeClass('active'); //이 버튼에 active를 주고 다른버튼에선  active없앰
+                $imgs.show(); //모든 버튼을 보이게 함
+            }
+        }).appendTo($buttons);  //이 버튼을 div에 넣기
+
+        //태그 버튼
+        $.each(tagged, function(tagName){ //루프실행 tagged로 tagName을 매개변수로 가져옴
+            $('<button/>',{ //버튼 생성
+                text: tagName + ' ('+tagged[tagName].length +')', //버튼 이름은 매개변수로 가져온 tagName이고 괄호안에는 하나의 태그네임이 가지는 값을 개수
+                click: function(){ //클릭했을 때
+                    $(this).addClass('active').siblings().removeClass('active'); //이 버튼에 active주고 나머지는 리무브
+                    $imgs.hide().filter(tagged[tagName]).show(); //이미지 모두 숨기고 이미지들에 대해 필터매소드로 해당 태그 이미지 보여줌
+                }
+            }).appendTo($buttons); //이 생성된 버튼은 div안에
+        });
+
+        var $search = $('#filter-search');
+        var cache = [];
+
+        $imgs.each(function(){ //이미지 각각에 대해 지정함수 실행
+            cache.push({ //빈 배열에 객체로 무언가 넣을거임
+                element: this, //element라는 키에 이미지 값을 넣고
+                text: this.alt.trim().toLowerCase() //text라는 키에 이 이미지의 alt값을 소문자로 만들어 넣음
+            });
+        });
+
+        function filter(){ //filter라는 함수 생성
+            var query = this.value.trim().toLowerCase(); //this라는 것의 밸류값을 query라고 정의
+            cache.forEach(function(img){ //이미지와 alt값이 있는 객체를 배열로 가지는 캐쉬를 쪼개서
+                var index = 0;
+                if (query) {
+                    index = img.text.indexOf(query); //캐쉬안에 이미지객체에서 text를 가져와 query값이 있는지 검자하고 index값으로 리턴
+                }
+                img.element.style.display = index === -1 ? 'none' : ''; // 인덱스의 값이 -1이면(해당 문자가 없으면) none주고 아니면 빈값을 줌
+            });
+        }
+
+        if ('oninput' in $search[0]) {
+            $search.on('input',filter);
+        }else{
+            $search.on('keyup',filter);
+        }
+
+
+
+
+        var v1, v2;
+        var testArray = [];
+        $("#data tr").each(function(){
+            v1 = $(this).find('td').eq(0).html(); //문자열 두줄
+            testArray.push(v1);
+        });
+        console.log(testArray);
+
+
+
+
+
+        var arr = ['My', 'name', 'is', 'SeHee', ', Kim'];
+        var str = arr.join(' ');
+        console.log(str);
+
+
+
+        // The following object masquerades as an array.
+        var fakeArray = {"length": 1, 0: "Addy", 1: "Subtracty"};
+        // Therefore, convert it to a real array
+        var realArray = $.makeArray( fakeArray )
+            console.log(realArray);
+        }());
+</script>
+
+</body>
+</html>

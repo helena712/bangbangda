@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" charset="utf-8" />
+	<title> 패럴랙스 스크롤링 </title>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <style type="text/css">
+        #slider{ width: 100%; background-color: lightpink; height: 100%; position: fixed; }
+        #overflow{ width: 100%; height: 100%; position: absolute; top: 0; }
+    </style>
+</head>
+<body>
+    <div id="slider"></div>
+    <div id="overflow"></div>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var ovf, slider;
+
+            $(function(){
+                ovf = this.getElementById("overflow");
+                slider = this.getElementById("slider");
+                winResize();
+                $(window).on({resize: winResize, scroll: winScroll});
+            });
+
+            function winResize(){
+                ovf.style.top = slider.offsetHeight + "px";
+            }
+
+            function winScroll(){
+                var op = 1 - (window.pageYOffset / slider.offsetHeight);
+                slider.style.opacity = op;
+            }
+
+
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

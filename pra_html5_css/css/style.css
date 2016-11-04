@@ -1,0 +1,149 @@
+/*  Reset CSS  */
+* { margin:0;  padding:0;}
+ol,ul { list-style: none; margin: 0; padding: 0;}
+a { outline:0; text-decoration:none; color:#555; display: block}
+img { border:0;}
+body { font:12px/1.4 arial; color:#555; }
+
+#wrap { width: 100% }
+
+#header {  width: 100%; border-bottom: 2px solid #d0d0d0}
+#header .top { width: 1000px; margin: 0 auto; padding: 10px 0;}
+#header .top:after { content: ""; display: block; clear: both; }
+#header .top h1 { float: left; font-size: 80px; font-weight: bold;  }
+#header .top .nav { float: right; padding: 45px}
+#header .top .nav .menu_btn { display: none; }
+#header .top .nav .menu_list { overflow: hidden; }
+#header .top .nav li { float: left; width: 100px; }
+#header .top .nav li a { font-size: 15px; font-weight: bold; line-height: 30px; text-align: center; }
+#header .top .nav li a:hover { color: #fff; background-color: #273043 }
+
+#container { width: 100%; }
+#container .banner { height: 400px; overflow: hidden; background: url('../img/top-visual.jpg') center -230px no-repeat; background-size: auto; }
+#container .banner .ban_txt { width: 1000px; height: 400px; margin: 0 auto; position: relative; }
+#container .banner .ban_txt p { position: absolute; bottom: 20px; right: 0; width: 400px; height: 100px; padding: 10px; box-sizing: border-box; background-color: rgba(39, 39, 39, 0.67); font-size: 16px; font-weight: bold; color: #fff }
+#container .cont1 { width: 1000px; margin: 20px auto; }
+#container .cont1 ul { overflow: hidden; }
+#container .cont1 li { width: 32%;  text-align: center; float: left;}
+#container .cont1 li.con1_01 { margin-right: 2%; background-color: #C74B5C }
+#container .cont1 li.con1_02 { margin-right: 2%; background-color: #F2CE4B }
+#container .cont1 li.con1_03 { background-color: #2E958D }
+#container .cont1 li i { font-size: 50px; padding: 40px 0; color: #fff  }
+#container .cont1 li dl { background-color: rgba(39, 39, 39, 0.67); padding: 10px 20px; color: #fff}
+#container .cont1 li dt { font-size: 20px; line-height: 30px;}
+#container .cont1 li dd { height: 40px }
+
+#container .cont_wrap { width: 1000px; margin: 0 auto }
+#container .cont_wrap:after { content: ""; display: block; clear: both }
+#container .cont2 { float: left; border: 2px solid #AEB1B1; padding: 10px 20px 20px 20px; width: 580px}
+#container .cont2 h3 { font-size: 25px;  line-height: 40px; margin-bottom: 10px;  border-bottom: 1px solid #ccc}
+#container .cont2 li a { font-size: 14px; line-height: 20px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+#container .cont2 li a time { margin-right: 10px }
+
+#container .cont3 { float: right; width: 350px; margin-bottom: 30px}
+#container .cont3 p { position: relative; padding: 5px 0; text-align: center; color: #fff; font-size: 18px; font-weight: 700; background-color: #4C688B; border-radius: 5px; margin-bottom: 20px }
+#container .cont3 p:after { top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(76, 104, 139, 0); border-top-color: #4C688B; border-width: 10px; margin-left: -10px; }
+#container .cont3 ul { overflow: hidden; }
+#container .cont3 li { float: left; width: 50%; }
+#container .cont3 li a { height: 64px; text-align: center; font-size: 20px; color: #fff; line-height: 64px }
+#container .cont3 li a i { margin-right: 10px}
+#container .cont3 li a.tw { background-color: #3a9eea }
+#container .cont3 li a.fb { background-color: #194da9 }
+#container .cont3 li a.yt { background-color: #9c0905 }
+#container .cont3 li a.gg { background-color: #c7221e }
+
+#footer { width: 100%; padding: 20px 0; background-color: #d0d0d0 }
+#footer p { width: 1000px; margin: 0 auto; height: 50px }
+
+/* 서브 페이지 */
+.sub_page { width: 1000px; margin: 0 auto; overflow: hidden; }
+.sub_page:after { content: ""; display: block; clear: both; }
+.sub_page .aside { float: left; width: 20%; padding: 20px; box-sizing: border-box; background-color: lightgreen }
+.sub_page .aside h4 { font-size: 20px; padding-bottom: 10px; margin- border-bottom: 2px solid #d0d0d0  }
+.sub_page .sub_cont { float: right; width: 80%; padding: 20px; box-sizing: border-box; background-color: lightblue}
+.sub_page .sub_cont .bread { text-align: right; }
+.sub_page .sub_cont ol { overflow: hidden; display: inline-block;}
+.sub_page .sub_cont ol li { float: left;}
+.sub_page .sub_cont ol li a { display: inline-block; }
+.sub_page .sub_cont ol li i { margin: 0 8px 0 5px }
+.sub_page .sub_cont .menu1_cont { margin: 30px 0 }
+.sub_page .sub_cont h3 { font-size: 30px; font-weight: 700; line-height: 50px; }
+.sub_page .sub_cont img { margin: 20px 0; }
+.sub_page .sub_cont .txt_area p { font-size: 13px; line-height: 20px; text-align: justify;  }
+.sub_page .sub_cont .txt_area h4 { font-size: 18px; line-height: 25x; margin: 20px 0 10px; }
+.sub_page .sub_cont .txt_area h4 i { margin-right: 10px }
+
+
+/* 데스크탑 */
+@media ( max-width: 1040px){
+    #header .top {  width: 100%;}
+    #container .banner .ban_txt { width: 100%; }
+    #container .cont1 { width: 100%; padding: 0 20px; box-sizing: border-box; }
+    #container .cont_wrap { width: 100%; padding: 0 20px; box-sizing: border-box;  }
+    #footer p { width: width: 100%; padding: 0 20px; box-sizing: border-box;  }
+}
+
+@media ( min-width: 768px) and (max-width: 1039px){
+    #header .top h1 { font-size: 50px; margin-left: 20px; line-height: 80px }
+    #header .top .nav { padding: 25px}
+    #header .top .nav li { width: 90px; }
+    #container .banner .ban_txt p { right: 20px }
+    #container .cont1 li dd { height: 50px }
+    #container .cont2 { width: 60% }
+    #container .cont3 { width: 32%; }
+    #container .cont3 p { font-size: 15px }
+    #container .cont3 li a { font-size: 16px }
+}
+
+/* 태블릿 */
+@media ( min-width: 600px){
+    #header .top .nav .fa-bars { display: none; }
+}
+
+@media ( min-width: 600px) and (max-width: 767px){
+    #header .top h1 { float: none; font-size: 40px; text-align: center; }
+    #header .top .nav { float: none; text-align: center; padding: 20px 0 10px}
+    #header .top .nav ul { display: inline-block; }
+    #container .banner { height: 300px; background-position: center -360px }
+    #container .banner .ban_txt { height: 300px; }
+    #container .banner .ban_txt p { right: 20px }
+    #container .cont1 li a { overflow: hidden; }
+    #container .cont1 li a i { float: left; font-size: 30px; width: 30%; box-sizing: border-box}
+    #container .cont1 li a dl { float: right; width: 70%; box-sizing: border-box; padding: 10px}
+    #container .cont1 li dt { font-size: 16px }
+    #container .cont1 li dd { font-size: 11px; height: auto; height: 60px }
+    #container .cont2 { width: 100%; box-sizing: border-box; margin-bottom: 20px;}
+    #container .cont3 { width: 100%; box-sizing: border-box;}
+    #container .cont3 p { font-size: 15px }
+    #container .cont3 li a { font-size: 16px }
+}
+
+/* 모바일 */
+@media ( max-width: 599px){
+    #header .top h1 { font-size: 30px; margin-left: 20px;}
+    #header .top .nav { position: relative; padding: 0; margin: 5px 20px; }
+    #header .top .nav .menu_btn { display: block; }
+    #header .top .nav .fa-bars { display: block; font-size: 25px; text-align: right; margin-top: 3px; }
+    #header .top .nav ul { display: none; position: absolute; top: 30px; right: 0; z-index: 100; background-color: rgba(39, 39, 39, 0.67)}
+    #header .top .nav li { float: none; }
+    #header .top .nav li a { font-size: 13px; color: #fff}
+    #container .banner { height: 200px; background-position: center -200px; background-size: 900px  }
+    #container .banner .ban_txt { height: 200px }
+    #container .banner .ban_txt p { bottom: 0; width: 100%;  }
+    #container .cont1 { padding: 0; margin: 0}
+    #container .cont1 li { float: none; width: 100%}
+    #container .cont1 li a { overflow: hidden; }
+    #container .cont1 li a i { float: left; font-size: 30px; width: 30%; padding: 0; line-height: 60px; box-sizing: border-box}
+    #container .cont1 li a dl { float: right; width: 70%; box-sizing: border-box; padding: 0; background: none;}
+    #container .cont1 li dt { line-height: 60px; font-size: 18px}
+    #container .cont1 li dd { display: none; }
+    #container .cont_wrap { padding: 0; }
+    #container .cont2 { border: none; padding: 10px 10px 20px; width: 100%; box-sizing: border-box;}
+    #container .cont2 li a { font-size: 13px }
+    #container .cont3 { width: 100% }
+    #container .cont3 p { display: none; }
+    #container .cont3 li { width: 25% }
+    #container .cont3 li a span { display: none; }
+    #container .cont3 li a i { margin: 0; }
+    #footer p { width: 100%; height: auto; text-align: center; }
+}

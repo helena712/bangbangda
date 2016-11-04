@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>skrollr - parallax scrolling for the masses</title>
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <link href="css/fixed-positioning.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body { height: 100%; position: relative; overflow-x: hidden; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+        header, footer { padding: 30px 0; height: 80px; background-color: #fff}
+        header { position: fixed; top: 0; left: 0; z-index: 1000; width: 100%;  }
+        .wrap { position: relative; top: 180px; left: 0; width: 100% }
+        section { width: 100%; height: 100%; }
+        section .tit { width: 1000px; margin-bottom: 50px; margin-top: 50px; margin-left: 50%; left: -500px; font-size: 50px; text-align: center; font-weight: bold; }
+        #sec01 { background-color: lightblue; }
+        #sec02 { background-color: lightyellow; }
+        #sec03 { background-color: lightpink }
+        #sec04 { background-color: orange }
+
+        .cont-wd h1 { font-size: 40px; font-weight: 700; text-align: center; }*/
+    </style>
+</head>
+
+<body>
+<header><div class="cont-wd"><h1>Header</h1></div></header>
+
+<div class="wrap" id="skrollr-body" data-0="" data-10000=""><!-- 총길이 설정 -->
+<section id="sec01" class="" data-top="position:fixed;" data-0="top:140px" data-6000="top:-2000px"> <!-- 0부터 2000까지 올림 -->
+    <div class="tit" data-0="opacity:1" data-4000="opacity:0">
+        content01
+    </div>
+    <div class="cont-wd">
+        <div data-0="opacity:1" data-4000="opacity:0">
+            <img src="css/images/kitteh1.jpg">
+        </div>
+    </div>
+</section>
+<!-- <section id="sec02" class="">
+    <div class="tit" style="z-index:120;" data-top="position:absolute;" data-0="top:180px; opacity:1" data-4000="opacity:0">
+        content02
+    </div>
+    <div class="cont-wd" id="skrollr-body" data-0="" data-10000="">
+        <div style="z-index:120;" data-0="opacity:0" data-6000="opacity:1">
+            <img src="css/images/kitteh2.jpg">
+        </div>
+    </div>
+</section>
+<section id="sec03" class="">
+    <div class="cont-wd">content03</div>
+</section>
+<section id="sec04" class="">
+    <div class="cont-wd">content04</div>
+</section>
+</div> -->
+
+<!-- <footer><div class="cont-wd"><h1>Footer</h1></div></footer> -->
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    skrollr.init({
+      forceHeight: false
+    });
+
+});
+</script>
+</body>
+
+</html>

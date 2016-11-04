@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+    <style>
+        * {box-sizing: border-box}
+        html, body { margin:0; padding:0}
+        a { text-decoration: none}
+        ul { padding: 0; margin:0}
+        li { list-style: none}
+        .wrap { width: 100%}
+        .sidebar { position: fixed; width: 220px; background: #6d7983}
+        .sidebar h1 { width: 100%; height: 100px; margin:0; padding: 20px; background: #242a30; color: #fff}
+        .sidebar nav { height: 100%; margin: 20px 0}
+        .sidebar nav ul {}
+        .sidebar nav ul li a { display: block; font-size: 16px; line-height: 24px; color: #fff; padding: 10px 15px}
+        .sidebar nav ul li a:hover { background: #242a30}
+        .header { width: 100%; padding-left: 220px; height: 60px; text-align: right; background: #e1e6e8}
+        .header ul { overflow: hidden; display: inline-block}
+        .header ul li { float: left}
+        .header ul li a { padding: 0 10px; font-size: 16px; line-height: 60px}
+        .container { width: 100%; padding-left: 220px; height: 100%}
+        .container .contents { padding: 20px; width: 100%}
+        .container .contents section { padding: 0 10px; overflow: hidden; margin-bottom: 20px;}
+        .container .contents section > div { width: 100%; height: 100%; border: 1px solid #ddd;}
+        .container .contents section > div > img { width: 100%; height:100%}
+        .container .contents section.sec1, .container .contents section.sec2 { height:400px; float: left}
+        .container .contents section.sec3 { width: 100%; height: 300px; }
+        .container .contents section.sec1 { width: 50%; }
+        .container .contents section.sec2 { width: 50%; }
+
+
+
+        .img_area {  }
+    </style>
+    <script>
+        $(document).ready(function() {
+            var win_h = $(window).height();
+            $(".sidebar").height(win_h)
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="sidebar">
+            <h1>LOGO</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header">
+            <ul>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">menu</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="contents">
+                <section class="sec1">
+                    <div class="img_area"><img src="geo.png"/></div>
+                </section>
+                <section class="sec2">
+                    <div class=""><img src=""/></div>
+                </section>
+                <section class="sec3">
+                    <div class=""><img src=""/></div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

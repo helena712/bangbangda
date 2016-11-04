@@ -1,0 +1,15 @@
+/*common*/
+*{box-sizing: border-box;}
+body {
+    background-color: #ecf0f5; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; font-weight: normal; font-variant: normal; color: #758697;
+    -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased !important;
+    margin: 0; padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {margin:0; padding:0}
+ul, li { list-style-type: none; margin: 0; padding: 0;}
+p { margin: 0; padding: 0; }
+input, button { margin: 0; padding: 0; border-width:0; vertical-align: middle;}
+a {text-decoration:none; color:#758697;}
+button:focus, input:focus, select:focus {outline:0;}
+table{border-collapse:collapse;}

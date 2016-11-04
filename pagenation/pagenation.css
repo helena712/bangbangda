@@ -1,0 +1,8 @@
+.wrap {width: 1000px; margin: 100px auto;}
+.table {width:100%; background: #ecf2f5;}
+.table th, .table td { text-align: left; padding: 5px 10px;}
+.table th { border-bottom: 1px solid #fff;}
+.pagenation { margin: 20px auto;}
+.pagenation a { display: inline-block; text-decoration: none; padding: 5px 10px; color: #bbb;}
+.pagenation a:hover { color: #aaa}
+.pagenation .pageIndex { display: inline-block;}
